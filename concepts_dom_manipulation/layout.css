@@ -1,0 +1,45 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar .myList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: rgba(230, 234, 234, 0.533);
+    padding: 20px;
+    border-radius: 30px;
+    border-color: rgb(37, 36, 36);
+    margin-top: 10px;
+}
+
+.myList, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.myList a:hover {
+    transition: ease-in-out 0.4s;
+    letter-spacing: 2px;
+    padding: 10px;
+    color: rgba(169, 62, 251, 0.94);
+}
+
+.dark {
+    color: white;
+}
+
+.light {
+    color: black;
+}
