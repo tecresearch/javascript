@@ -104,6 +104,42 @@ modeIcon.onclick = function() {
 // Handling computed styles: getComputedStyle(): Retrieves the actual computed styles applied to an element, as determined by the browser.
 
 
+function getComputedStyles() {
+  const rootElement = document.getElementById('root');
+  const myListElement = document.querySelector('.myList');
+  const linkElement = document.querySelector('.myList a');
+
+  const rootStyles = getComputedStyle(rootElement);
+  const myListStyles = getComputedStyle(myListElement);
+  const linkStyles = getComputedStyle(linkElement);
+
+  console.log('Root Styles:', {
+    display: rootStyles.display,
+    justifyContent: rootStyles.justifyContent,
+    alignItems: rootStyles.alignItems,
+    flexWrap: rootStyles.flexWrap,
+  });
+
+  console.log('MyList Styles:', {
+    display: myListStyles.display,
+    gap: myListStyles.gap,
+    padding: myListStyles.padding,
+    borderRadius: myListStyles.borderRadius,
+    backgroundColor: myListStyles.backgroundColor,
+  });
+
+  console.log('Link Styles:', {
+    listStyle: linkStyles.listStyle,
+    textDecoration: linkStyles.textDecoration,
+    color: linkStyles.color,
+  });
+}
+getComputedStyles();
+
+
+
+
+
 // ---------------------- Manipulating DOM Elements
 
 // Creating elements: document.createElement(): Creates a new element node.
