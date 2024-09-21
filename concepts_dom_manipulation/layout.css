@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+
 * {
     padding: 0px;
     margin: 0px;
@@ -95,3 +99,87 @@
     transition: ease-in-out 0.7s;
     cursor: pointer;
 }
+
+
+/* 
+css for hero section
+*/
+
+
+.heroSection{
+    display: flex;
+    flex-direction: column;
+    gap:5vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    gap:10vw;
+}
+#heroHead{
+    font-size: 50px;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: goldenrod;
+}
+#heroContent{
+    font-size: 16px;
+    font-family: "Sofadi One", system-ui;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: rgb(110, 110, 110);
+}
+.welcomeNote{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 80px;
+    padding-top: 90px;
+    width: 50vw;
+    height: 375px;
+}
+
+
+.welcomeBg{
+    background-image: url(hero.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 40vw;
+    height: 375px;
+    cursor: pointer;
+}
+.welcomeBg:hover{
+    transform: scale(0.8);
+    transition: ease-in-out 0.6s;
+}
+
+#btn {
+    background-color: #ac4caf; /* Green */
+    color: white;
+    width: 90px;
+    height: 40px; /* Added height for a better button size */
+    border: none; /* Removes any default border */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+    cursor: pointer; /* Changes cursor on hover */
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    
+}
+
+#btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly scales the button on hover */
+}
+
+#btn:active {
+    transform: scale(0.98); /* Shrinks the button slightly on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduces the shadow on click */
+}
+
+
+

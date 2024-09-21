@@ -129,7 +129,7 @@ hamburgerIcon.onclick=function(){
 
 //adding the new logo
 const myNewLogo=document.querySelector('#myNewLogo');
-myNewLogo.innerHTML="<p>TECRESEARCH</p>"
+myNewLogo.innerHTML="<p>TCA</p>"
 
 // Handling computed styles: getComputedStyle(): Retrieves the actual computed styles applied to an element, as determined by the browser.
 
