@@ -9,9 +9,9 @@
 // 
 // // document.getElementById(): Selects a single element by its unique ID.
 
-const myRoot=document.getElementById('root');
+const root=document.getElementById('root');
 
-console.log(myRoot);
+console.log(root);
 
 
 // document.getElementsByClassName(): Selects all elements with a given class name.
@@ -57,7 +57,7 @@ mySingleLi.textContent+='A ]';//adding inner content
 // Working with innerHTML, outerHTML: innerHTML allows setting or getting the HTML inside an element, while outerHTML includes the element itself.
 mySingleLi.innerHTML=`<a href="#">TCA</a>`;//adding inner content
 mySingleLi.outerHTML=`
-        <strong style="background-color:gold ;padding :5px; border-radius:50px; ">
+        <strong id="myNewLogo" >
           <a id="logo" href="#HOME" >TCA</a>
         </strong>`;//adding inner content
 
@@ -72,8 +72,10 @@ mySingleLi.style.fontSize="28px";
 
 
 // Adding/removing CSS classes: classList property (add(), remove(), toggle(), contains()): Methods for dynamically adding, removing, toggling, and checking for CSS classes on an element.
+
+
 const bgChange = document.querySelector('span');
-const modeIcon = document.getElementById('mode');
+const modeIcons = document.querySelectorAll('.mode'); // Renamed for clarity
 const myList1 = document.querySelector('.myList'); // Select the myList
 
 bgChange.id = "bg-changer"; // Adding id to the span
@@ -81,25 +83,53 @@ bgChange.className = "bg-changer1"; // Adding class to span
 bgChange.classList.add("light"); // Start with light class
 
 // Function to toggle between dark and light classes
-modeIcon.onclick = function() {
-    if (bgChange.classList.contains("light")) {
-        bgChange.classList.remove("light");
-        bgChange.classList.add("dark");
-        document.body.style.backgroundColor = "black";
-        modeIcon.style.fill = "white"; // Change SVG color to white
-        myList1.style.backgroundColor = "gray"; // Change myList background color
-        myList1.style.color = "white"; // Change myList text color
-        myList1.querySelectorAll('a').forEach(link => link.style.color = "white"); // Change link color
-    } else {
-        bgChange.classList.remove("dark");
-        bgChange.classList.add("light");
-        document.body.style.backgroundColor = "white";
-        modeIcon.style.fill = "black"; // Change SVG color to black
-        myList1.style.backgroundColor = ""; // Reset myList background color
-        myList1.style.color = "black"; // Change myList text color
-        myList1.querySelectorAll('a').forEach(link => link.style.color = "black"); // Reset link color
+modeIcons.forEach(modeIcon => {
+    modeIcon.onclick = function() {
+        if (bgChange.classList.contains("light")) {
+            bgChange.classList.remove("light");
+            bgChange.classList.add("dark");
+            document.body.style.backgroundColor = "black";
+            modeIcon.style.fill = "white"; // Change SVG color to white
+            myList1.style.backgroundColor = "gray"; // Change myList background color
+            myList1.style.color = "white"; // Change myList text color
+            myList1.querySelectorAll('a').forEach(link => link.style.color = "white"); // Change link color
+        } else {
+            bgChange.classList.remove("dark");
+            bgChange.classList.add("light");
+            document.body.style.backgroundColor = "white";
+            modeIcon.style.fill = "black"; // Change SVG color to black
+            myList1.style.backgroundColor = ""; // Reset myList background color
+            myList1.style.color = "black"; // Change myList text color
+            myList1.querySelectorAll('a').forEach(link => link.style.color = "black"); // Reset link color
+        }
+    };
+});
+
+//for hamburger
+// ...TODO
+
+const hamburgerIcon=document.getElementById('hmbgr');
+console.log(hamburgerIcon);
+ 
+hamburgerIcon.onclick=function(){
+    console.log("hamburger clicked");
+    const hamburger_menu=document.querySelector('.hamburger');
+   
+    if(hamburgerIcon.src.includes('hamburger-close.svg')){
+        hamburgerIcon.src="hamburger-open.svg";
+        hamburger_menu.style.display="flex";
+    
+    }else{
+        hamburgerIcon.src="hamburger-close.svg";
+        hamburger_menu.style.display="none";
     }
-};
+    
+
+}
+
+//adding the new logo
+const myNewLogo=document.querySelector('#myNewLogo');
+myNewLogo.innerHTML="<p>TECRESEARCH</p>"
 
 // Handling computed styles: getComputedStyle(): Retrieves the actual computed styles applied to an element, as determined by the browser.
 
@@ -136,13 +166,14 @@ function getComputedStyles() {
 }
 getComputedStyles();
 
-
-
-
-
+ 
 // ---------------------- Manipulating DOM Elements
 
+
 // Creating elements: document.createElement(): Creates a new element node.
+
+
+
 // Appending elements: appendChild(), insertBefore(): Appends a new child node to a parent or inserts it before an existing child node.
 // Removing elements: removeChild(): Removes a child node from its parent node.
 // Replacing elements: replaceChild(): Replaces an existing child node with a new one.

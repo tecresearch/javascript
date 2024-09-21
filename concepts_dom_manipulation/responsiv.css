@@ -1,0 +1,61 @@
+
+ .hamburger  {
+    display: none;
+}
+
+.hamburger, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.close{
+    display: none;
+}
+@media only screen and (max-width: 735px) {
+   
+    
+    .navbar .myList a{
+        display: none;
+    }
+    .navbar, .myList{
+        margin: 0;
+        width: 100%;
+        
+    }
+   
+    .close{
+        display: block;
+    }
+    .navbar .myList{
+        border-radius: 0px;
+        display: flex;
+        justify-content: space-around;
+    }
+   
+    .hamburger{
+    /* display: flex; added by js*/
+    width: auto;
+    flex-direction: column;
+    gap: 5px;
+    background-color: transparent;
+    border-color: rgb(37, 36, 36);
+    padding: 20px;
+    width: 50%;
+    border-radius: 0px 0px 30px 0px ;
+    box-shadow: 2px 2px 10px  rgba(230, 234, 234, 0.533);
+    
+    }
+  
+    .hamburger a:hover {
+        transition: ease-in-out 0.2s;
+        letter-spacing: 2px;
+        padding: 20px;
+        color: rgba(238, 29, 133, 0.94);
+        text-decoration: underline;
+       
+    }
+    
+    
+
+  }
