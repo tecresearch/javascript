@@ -172,11 +172,191 @@ getComputedStyles();
 
 // Creating elements: document.createElement(): Creates a new element node.
 
+const main=document.createElement('div');
+main.id="main";
+console.log(main);
 
+const footer=document.createElement('div');
+footer.id="footer";
+console.log(footer);
+
+let ncomment=document.createComment("This is navbar section");
+console.log(ncomment);
+
+let nccomment=document.createComment("This is navbar content");
+console.log(nccomment);
+
+let nhbcomment=document.createComment("This is hamburger content");
+console.log(nhbcomment);
+
+let hcomment=document.createComment("This is hero section"); 
+console.log(hcomment);
+
+
+let hleftcomment=document.createComment("This is hero left content"); 
+console.log(hleftcomment);
+
+
+let hrightcomment=document.createComment("This is hero right content"); 
+console.log(hrightcomment);
+
+let mcomment=document.createComment("This is main section comment");
+console.log(mcomment);
+
+let mnewText=document.createTextNode("This is main content ");
+console.log(mnewText);
+
+let fcomment=document.createComment("This is footer section comment");
+console.log(fcomment);
+
+let fnewText=document.createTextNode("This is footer content ");
+console.log(fnewText);
 
 // Appending elements: appendChild(), insertBefore(): Appends a new child node to a parent or inserts it before an existing child node.
+
+// appendChild():
+//appending the main to the root
+main.appendChild(mcomment);
+main.appendChild(mnewText);
+root.appendChild(main);
+
+// appending the footer to the root
+footer.appendChild(fcomment);
+footer.appendChild(fnewText);
+root.appendChild(footer);
+
+
+// insertBefore():
+
+// --------------------------------------------------------------------------------------------------------------
+// Insert the navbar comments before the navbar element and inside
+
+const rt=document.getElementById('root');
+console.log(rt.childNodes,{count:rt.childNodes.length});
+root.insertBefore(ncomment, root.childNodes[0]); // Insert navbar comment
+
+            // Assuming the navigation bar has the class 'navbar'
+            const navigation = document.querySelector('.navbar');
+            console.log(navigation.childNodes,{count:navigation.childNodes.length});
+            navigation.insertBefore(nccomment, navigation.childNodes[0]); // Insert navbar content comment
+            navigation.insertBefore(nhbcomment, navigation.childNodes[3]); // Insert hamburger content comment
+
+// -------------------------------------------------------------------------------------------------------------------
+
+//Insert the hero comments before the hero element and inside
+
+const heroSection=document.querySelector('.heroSection');
+console.log(heroSection.childNodes,{count:heroSection.childNodes.length});
+rt.insertBefore(document.createComment("This is hero section "),rt.childNodes[3]);
+
+                const heroC=document.querySelector('.container');
+                console.log(heroC.childNodes,{count:heroC.childNodes.length});
+                heroC.insertBefore(hleftcomment,heroC.childNodes[0]);
+                heroC.insertBefore(hrightcomment,heroC.childNodes[4]);
+//---------------------------------------------------------------------------------------------------------------------
+//insert the comment before main element and inside
+const mainSection=document.querySelector('#main');
+console.log(mainSection.childNodes,{count:mainSection.childNodes.length});
+root.insertBefore(mcomment,root.childNodes[6]);
+
+// --------------------------------------------------------------------------------------------------------------
+
+//insert the comment before main element and inside
+const footerSection=document.querySelector('#footer');
+console.log(footerSection.childNodes,{count:footerSection.childNodes.length});
+root.insertBefore(fcomment,root.childNodes[9]);
+
+//--------------------------------------------------------------------------------------------------------------------
+// Select the root element
+const root1 = document.getElementById('root'); // Ensure there's a root element in your HTML
+
+// Create a target element
+const myElement = document.createElement('div');
+myElement.id = 'temp_element';
+root1.appendChild(myElement);
+
+// Select the target element
+const targetElement = document.getElementById('temp_element');
+
+// Create new elements
+const newElement1 = document.createElement('div');
+newElement1.textContent = 'Before Begin';
+
+const newElement2 = document.createElement('div');
+newElement2.textContent = 'After Begin';
+
+const newElement3 = document.createElement('div');
+newElement3.textContent = 'Before End';
+
+const newElement4 = document.createElement('div');
+newElement4.textContent = 'After End';
+
+// Insert the new elements
+targetElement.insertAdjacentElement('beforebegin', newElement1); // Before target
+targetElement.insertAdjacentElement('afterbegin', newElement2);  // Inside, before first child
+targetElement.insertAdjacentElement('beforeend', newElement3);   // Inside, after last child
+targetElement.insertAdjacentElement('afterend', newElement4);    // After target
+
+
 // Removing elements: removeChild(): Removes a child node from its parent node.
-// Replacing elements: replaceChild(): Replaces an existing child node with a new one.
+
+// Removing elements
+// Assuming newElement1 is a child of targetElement
+
+try{
+  targetElement.removeChild(newElement1);
+}catch(err){
+  console.log(err.message,{
+    code:err.code,
+    name:err.name,
+    message:"not a child of targetElement"
+  });
+}
+
+// This will throw an error since newElement2 is not a child of targetElement
+
+// To remove newElement2 correctly:
+newElement1.remove(); // Remove newElement2 from the DOM
+
+// To remove newElement4 correctly, you can call remove directly on it
+newElement4.remove(); // Remove newElement4 from the DOM
+
+//removing newElement1
+
+if (targetElement.contains(newElement2)) {
+  targetElement.removeChild(newElement2); // This removes newElement2 from targetElement 
+}
+//--------------------------------------------------------------------------------------------------
+// Replacing elements
+const newElement5 = document.createElement('div');
+newElement5.textContent = 'Replaced Element';
+
+// Replace newElement3 with newElement5
+targetElement.replaceChild(newElement5, newElement3); // Replaces newElement3 with newElement5
+
+// Replacing the targetElement itself
+const newTarget = document.createElement('div');
+newTarget.textContent = 'I replaced myself!';
+targetElement.replaceWith(newTarget); // Replace targetElement with newElement6
+
+newTarget.remove();
+main.replaceWith(footer);
+footer.replaceWith(main);
+//remove all temp elements
+main.remove();
+footer.remove();
+mcomment.remove();
+mnewText.remove();
+fcomment.remove();
+fnewText.remove();
+
+//Creating main section for my website
+
+
+//Creating footer section for my website
+
+
+//--------------------------------------------------------------------------------------------------------------------
 
 // ---------------------Manipulating Attributes
 
@@ -188,7 +368,9 @@ getComputedStyles();
 
 // --------------------Event Handling in the DOM
 
+
 // Adding event listeners: addEventListener(): Attaches an event handler function to an element for a specific event.
+
 // Removing event listeners: removeEventListener(): Removes an event handler that was previously added with addEventListener.
 // Event object, event propagation (bubbling and capturing): The event object contains details about the event. Event propagation refers to the order in which events are handled (bubbling or capturing).
 // Event delegation: A technique to handle events efficiently by assigning a single event handler to a parent element instead of multiple handlers.
