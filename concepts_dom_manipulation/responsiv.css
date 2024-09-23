@@ -22,6 +22,7 @@
         margin: 0;
         width: 100%;
         
+        
     }
    
     .close{
@@ -31,10 +32,12 @@
         border-radius: 0px;
         display: flex;
         justify-content: space-around;
+        
     }
    
     .hamburger{
-    /* display: flex; added by js*/
+    /*display: flex;added by js*/
+    transition: all 1s ease;
     width: auto;
     flex-direction: column;
     gap: 5px;
