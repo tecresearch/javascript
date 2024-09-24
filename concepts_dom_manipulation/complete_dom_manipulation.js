@@ -410,9 +410,17 @@ fnewText.remove();
 
 //Creating main section for my website
 
+const myMainS = document.createElement('div');
+myMainS.id = "sectionMain";
 
+
+root.insertAdjacentElement('beforeend',myMainS);
 
 //Creating footer section for my website
+
+const myFooterS = document.createElement('div');
+myFooterS.id='sectionFooter';
+root.insertAdjacentElement('beforeend',myFooterS);
 
 
 //--------------------------------------------------------------------------------------------------------------------
