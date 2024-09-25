@@ -413,13 +413,19 @@ fnewText.remove();
 const myMainS = document.createElement('div');
 myMainS.id = "sectionMain";
 
-
+for(let i=0; i<4; i++){
+  const myDiv=document.createElement('div');
+myDiv.className="MD";
+myMainS.appendChild(myDiv);
+}
 root.insertAdjacentElement('beforeend',myMainS);
 
 //Creating footer section for my website
 
 const myFooterS = document.createElement('div');
 myFooterS.id='sectionFooter';
+myFooterS.style.backgroundImage="img/mainSection.jpg";
+myFooterS.style.backgroundRepeat="no-repeate";
 root.insertAdjacentElement('beforeend',myFooterS);
 
 
