@@ -445,7 +445,7 @@ featuresDiv.innerHTML = `
 
 // Adding content to the main section
 const sectionsContent = [
-  { title: "IoT Development", description: "Explore the world of IoT development, connecting devices and creating smart solutions.", image: "/img/card/iot.png" },
+  { title: "IoT Development", description: "Explore the world of IoT development, connecting devices and creating smart solutions.", image: "img/card/iot.png" },
   { title: "Mobile Applications", description: "Discover how to develop engaging mobile applications for iOS and Android platforms.", image: "/img/card/app.jpg" },
   { title: "Web Development", description: "Learn the latest web technologies and frameworks to build responsive websites.", image: "/img/card/wd.jpg" },
   { title: "Cloud Solutions", description: "Understand cloud computing and how to leverage it for scalable applications.", image: "/img/card/cloud.jpg" },
