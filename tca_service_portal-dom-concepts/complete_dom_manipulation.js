@@ -446,13 +446,13 @@ featuresDiv.innerHTML = `
 // Adding content to the main section
 const sectionsContent = [
   { title: "IoT Development", description: "Explore the world of IoT development, connecting devices and creating smart solutions.", image: "img/card/iot.png" },
-  { title: "Mobile Applications", description: "Discover how to develop engaging mobile applications for iOS and Android platforms.", image: "/img/card/app.jpg" },
-  { title: "Web Development", description: "Learn the latest web technologies and frameworks to build responsive websites.", image: "/img/card/wd.jpg" },
-  { title: "Cloud Solutions", description: "Understand cloud computing and how to leverage it for scalable applications.", image: "/img/card/cloud.jpg" },
-  { title: "Machine Learning", description: "Dive into machine learning techniques to develop intelligent applications that learn from data.", image: "/img/card/ml.jpg" },
-  { title: "Blockchain Technology", description: "Explore blockchain solutions for enhanced security and transparency in transactions.", image: "/img/card/bc.jpg" },
-  { title: "Cybersecurity", description: "Implement robust cybersecurity measures to protect your data and applications.", image: "/img/card/cs.jpg" },
-  { title: "Data Analytics", description: "Utilize data analytics to gain insights and drive business strategies effectively.", image: "/img/card/da.png" }
+  { title: "Mobile Applications", description: "Discover how to develop engaging mobile applications for iOS and Android platforms.", image: "img/card/app.jpg" },
+  { title: "Web Development", description: "Learn the latest web technologies and frameworks to build responsive websites.", image: "img/card/wd.jpg" },
+  { title: "Cloud Solutions", description: "Understand cloud computing and how to leverage it for scalable applications.", image: "img/card/cloud.jpg" },
+  { title: "Machine Learning", description: "Dive into machine learning techniques to develop intelligent applications that learn from data.", image: "img/card/ml.jpg" },
+  { title: "Blockchain Technology", description: "Explore blockchain solutions for enhanced security and transparency in transactions.", image: "img/card/bc.jpg" },
+  { title: "Cybersecurity", description: "Implement robust cybersecurity measures to protect your data and applications.", image: "img/card/cs.jpg" },
+  { title: "Data Analytics", description: "Utilize data analytics to gain insights and drive business strategies effectively.", image: "img/card/da.png" }
 ];
 
 // Appending all sections to the main section
