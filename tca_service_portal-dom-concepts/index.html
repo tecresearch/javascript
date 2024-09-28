@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TCA Service Portal</title>
     <!-- <link rel="stylesheet" href="animation/css/onload.css"> inject via js-->
-     <link rel="stylesheet" href="animation/AOS/aos.css"> 
+     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">injected via js -->
+
     <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="responsiv.css" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -14,12 +15,12 @@
     <div id="root">
       <nav class="navbar">
         <ul class="myList" data-aos="zoom-in">
-          <li><a id="lg" href="#">HOME</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">PLATEFORMS</a></li>
-          <li><a href="#">CLIENTS</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">CONTACT </a></li>
+          <li><a href="#" data-section="home">HOME</a></li>
+          <li><a href="#" data-section="services">SERVICES</a></li>
+          <li><a href="#" data-section="platforms">PLATFORMS</a></li>
+          <li><a href="#" data-section="clients">CLIENTS</a></li>
+          <li><a href="#" data-section="about">ABOUT</a></li>
+          <li><a href="#" data-section="contact">CONTACT</a></li>
           <span>
             <img
               src="mode.svg"
@@ -47,12 +48,14 @@
           </span>
         </ul>
         <ul class="hamburger" data-aos="slide-right">
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">PLATEFORMS</a></li>
-          <li><a href="#">CLIENTS</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">CONTACT </a></li>
+          <li><a href="#" data-section="home">HOME</a></li>
+          <li><a href="#" data-section="services">SERVICES</a></li>
+          <li><a href="#" data-section="platforms">PLATFORMS</a></li>
+          <li><a href="#" data-section="clients">CLIENTS</a></li>
+          <li><a href="#" data-section="about">ABOUT</a></li>
+          <li><a href="#" data-section="contact">CONTACT</a></li>
+          
+        
         </ul>
       </nav>
       <div class="heroSection">
@@ -71,8 +74,22 @@
       </div>
     </div>
 
-    <script src="complete_dom_manipulation.js"></script>
+   
+
+    <script src="dom-concepts/complete_dom_manipulation.js"></script>
+    <script src="event-handling-concepts/events-handling-complete.js"></script>
     <!-- <script src="animation/css/onload.js"></script>inject via js -->
-    <script src="animation/AOS/aos.js"></script>
+     <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> inject via js  -->
+     <script>
+    const loadAnimation=async()=>{
+      AOS.init({
+  offset: 250,       // Offset value for animation triggers
+  duration: 2000    // Duration of the animation
+});
+console.log("AOS animation applied on you elements")
+    }
+    loadAnimation();
+ </script>
+   
   </body>
 </html>

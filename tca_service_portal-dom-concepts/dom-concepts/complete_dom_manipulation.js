@@ -569,31 +569,223 @@ root.insertAdjacentElement('beforeend', myFooterS);
 // ---------------------Manipulating Attributes
 
 // Getting and setting attributes: getAttribute(), setAttribute(): Retrieves or sets the value of an attribute on an element.
+// <!-- <link rel="stylesheet" href="animation/css/onload.css"> inject via js-->to the head
+        const link = document.createElement('link');
+        link.classList.add("aos-css");//to be remove
+        console.log(link);
+        const links=link.getAttribute('class');
+        console.log(links);
+        link.setAttribute('rel',"stylesheet");
+        link.setAttribute('href',"https://unpkg.com/aos@2.3.1/dist/aos.css");
+        link.setAttribute('type','text/css');
+        console.log('getting all Attributes:',{
+          rel: link.getAttribute('rel'),
+          href:link.getAttribute('href'),
+          type:link.getAttribute('type'),
+        });
+
+        // Getting and setting attributes: hasAttribute(): Checks if an element has a particular attribute.
+        console.log(link.hasAttribute('rel'));
+       
+        // <!-- <script src="animation/css/onload.js"></script>inject via js -->
+        const scriptAnimation = document.createElement('script');
+        console.log(scriptAnimation);
+        if(scriptAnimation.hasAttribute('src')){
+          console.log('script has src attribute');
+        }else{
+          console.log('script does not have src attribute');
+          scriptAnimation.setAttribute('src',"https://unpkg.com/aos@2.3.1/dist/aos.js");
+          scriptAnimation.setAttribute('type',"text/javascript");
+          console.log('now set : script has src attribute');
+          scriptAnimation.setAttribute("class","animation-js");//to be remove
+        }
+
+        //appending link and script for animation to head
+        document.head.insertAdjacentElement('beforeend',link);
+        document.head.insertAdjacentElement('beforeend',scriptAnimation);
+        
+
+
+// also get all getAttributes using attribute prop
+const linkAT=link.attributes;
+const scriptAT=scriptAnimation.attributes;
+const arr=[linkAT,scriptAT];
+console.log('getting all Attributes:',arr[0].linkAT,arr[1].scriptAT);
+
+arr.forEach(attributes=>{
+  for(let i=0;i<attributes.length;i++){
+    console.log(attributes[i].name,attributes[i].value);
+    }
+})
+
 // Removing attributes: removeAttribute(): Removes an attribute from an element.
-// Handling data attributes: Special attributes prefixed with data- used for embedding custom data within elements.
+
+link.removeAttribute('class');
+scriptAnimation.removeAttribute('class');
 
 
 
-// --------------------Event Handling in the DOM
+// Handling data attributes(dataset): Special attributes prefixed with data- used for embedding custom data within elements.
+
+const dlinks=document.querySelectorAll('nav a');
+
+  // Loop through each link and log data attributes
+  dlinks.forEach(link => {
+    const section = link.dataset.section; // Access data-section
+    console.log(`Section: ${section}`);
+    
+    // Example of adding an event listener
+    link.onclick=(event) => {
+        event.preventDefault(); // Prevent default link behavior
+        console.log(`You clicked on: ${section}`);
+    };
+});
 
 
-// Adding event listeners: addEventListener(): Attaches an event handler function to an element for a specific event.
 
-// Removing event listeners: removeEventListener(): Removes an event handler that was previously added with addEventListener.
-// Event object, event propagation (bubbling and capturing): The event object contains details about the event. Event propagation refers to the order in which events are handled (bubbling or capturing).
-// Event delegation: A technique to handle events efficiently by assigning a single event handler to a parent element instead of multiple handlers.
-// Common events: click, focus, blur, change, submit, etc.: Examples of frequently used DOM events that can be handled with JavaScript.
+    // Loop through each link and change data attributes using dataset
+    dlinks.forEach(link => {
+      const section = link.textContent.toLowerCase(); // Get the text content in lowercase
 
-// ------------------- Working with Forms
+      // Set a new data attribute using dataset
+      link.dataset[section] = section; // Creates data-home, data-services, etc.
+
+      // Optionally, remove the old data-section attribute
+      delete link.dataset.section; // Remove the old data-section attribute if needed
+
+      console.log(`Set data-${section} for ${link.textContent}: ${link.dataset[section]}`);
+  });
 
 
-// Accessing form elements: form.elements, form.submit(): Methods for accessing and submitting form data.
-// Validating form input: Techniques for ensuring user input is valid before submitting a form.
-// Handling form submissions with JavaScript: Methods for capturing and processing form data on the client side using JavaScript.
+    // Array of new section values
+    const data = ["homepage", "servicePage", "platformPage", "clientPage", "aboutPage", "contactPage"];
 
+    // Modify data attributes values using the array
+    dlinks.forEach((link, index) => {
+        link.dataset.section = data[index]; // Set the data-section to the corresponding value in the array
+        console.log(`Updated Section for ${link.textContent}: ${link.dataset.section}`);
+    });
+ 
+//adding aos data-aos attribute to the hero element for animation 
+// welcomeNote
+// heroHead
+// heroContent
+// welcomeBg
+
+  // Selecting hero section elements
+  const welcomeNote = document.querySelector('.welcomeNote');
+  const heroHead = document.getElementById('heroHead');
+  const heroContent = document.getElementById('heroContent');
+  const welcomeBg = document.querySelector('.welcomeBg');
+
+  // Log selected elements
+  console.log('Welcome Note:', welcomeNote);
+  console.log('Hero Head:', heroHead);
+  console.log('Hero Content:', heroContent);
+  console.log('Welcome Background:', welcomeBg);
+
+  // Check for null and set data-aos if elements exist
+  const heroArr = [welcomeNote, heroHead, heroContent, welcomeBg];
+  heroArr.forEach((element) => {
+      if (element) { // Check if the element is not null
+          element.dataset.aos = ''; // Create the attribute without a value
+          console.log(`Created data-aos for ${element.className || element.id}: ${element.dataset.aos}`);
+      } else {
+          console.log('Element not found');
+      }
+  });
+
+  
+  const aosValues = ['fade-right', 'fade-right','fade-up', 'fade-left']; // Example values
+  
+  heroArr.forEach((element, index) => {
+      if (element) {
+          element.dataset.aos = aosValues[index] || ''; // Set value based on index
+          console.log(`Set data-aos for ${element.className || element.id}: ${element.dataset.aos}`);
+      } else {
+          console.log('Element not found');
+      }
+  });
+
+//animation apply on 
+
+//.about
+//.features
+//.MD
+
+ // Apply data-aos attributes to .about, .features, and .MD
+ const aboutSection = document.querySelector('.about');
+ const featuresSection = document.querySelector('.features');
+ const mdElements = document.querySelectorAll('.MD');
+
+ // Setting data-aos for the about and features sections
+ if (aboutSection) {
+     aboutSection.dataset.aos = 'fade-right'; // Example value
+     console.log(`Set data-aos for .about: ${aboutSection.dataset.aos}`);
+ }
+
+ if (featuresSection) {
+     featuresSection.dataset.aos = 'fade-left'; // Example value
+     console.log(`Set data-aos for .features: ${featuresSection.dataset.aos}`);
+ }
+
+ // Setting data-aos for each .MD element
+ mdElements.forEach((element, index) => {
+     element.dataset.aos = index % 2 === 0 ? 'zoom-in' : 'zoom-out'; // Alternate values
+     console.log(`Set data-aos for .MD element ${index + 1}: ${element.dataset.aos}`);
+ });
+
+
+
+
+
+
+
+//dom imp concepts covered
 
 // -------------------- DOM Traversal
 
-// Parent, child, and sibling relationships: Refers to navigating through parent, child, and sibling nodes within the DOM tree.
-// parentNode, childNodes, firstChild, lastChild: Properties that allow access to the parent of a node, all child nodes, the first child, and the last child of a node.
-// previousSibling, nextSibling: Properties that allow access to the previous and next sibling nodes.
+// Question 1: Parent, Child, and Sibling Relationships
+// Explanation:
+// - Parent Node: Every node can have one parent node, except the root node.
+// - Child Nodes: Nodes can have multiple child nodes, which are nested inside them.
+// - Sibling Nodes: Nodes that share the same parent are considered siblings.
+
+// Selecting the container div
+const container = document.querySelector('.container');
+
+// Parent Node
+
+// --------------------
+
+// Question 2: Properties - parentNode, childNodes, firstChild, lastChild
+// Explanation:
+// - `parentNode`: Accesses the parent node of a given node.
+// - `childNodes`: Returns a NodeList of all child nodes (including text nodes).
+// - `firstChild`: Accesses the first child node of a specified node.
+// - `lastChild`: Accesses the last child node of a specified node.
+
+// Child Nodes
+
+// First Child
+
+// Last Child
+
+// --------------------
+
+// Question 3: Previous Sibling and Next Sibling
+// Explanation:
+// - `previousSibling`: Accesses the previous sibling node (could be a text node).
+// - `nextSibling`: Accesses the next sibling node (could be a text node).
+
+
+// Previous Sibling
+// const previousSibling = firstParagraph.previousSibling; // Could be a text node (whitespace)
+// console.log('Previous Sibling (could be text node):', previousSibling);
+
+// Next Sibling
+
+// Additional Sibling Navigation
+// Using Element Properties for Sibling Navigation
+
+// Getting previous and next sibling elements
