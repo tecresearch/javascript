@@ -62,15 +62,15 @@ function handleKeyUp() {
 }
 
 // Setting event handlers directly when website will be loaded 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#clickButton').onclick = handleClick;
-    document.querySelector('#focusInput').onfocus = handleFocus;
-    document.querySelector('#focusInput').onblur = handleBlur;
-    document.querySelector('#changeInput').onchange = handleChange;
-    document.querySelector('#myForm').onsubmit = handleSubmit;
-    document.querySelector('#keyInput').onkeydown = handleKeyDown;
-    document.querySelector('#keyInput').onkeyup = handleKeyUp;
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     document.querySelector('#clickButton').onclick = handleClick;
+//     document.querySelector('#focusInput').onfocus = handleFocus;
+//     document.querySelector('#focusInput').onblur = handleBlur;
+//     document.querySelector('#changeInput').onchange = handleChange;
+//     document.querySelector('#myForm').onsubmit = handleSubmit;
+//     document.querySelector('#keyInput').onkeydown = handleKeyDown;
+//     document.querySelector('#keyInput').onkeyup = handleKeyUp;
+// });
 
 
 // Adding event listeners: addEventListener(): Attaches an event handler function to an element for a specific event.
@@ -168,17 +168,6 @@ eMyList.removeEventListener('click',performAction);
         //we applied the singl event handler to the root(parent)
         eRoot.addEventListener('click',myMessege);
         eRoot.removeEventListener('click',myMessege);
-
-
-// ------------------- Working with Forms
-
-
-// Accessing form elements: form.elements, form.submit(): Methods for accessing and submitting form data.
-
-// Validating form input: Techniques for ensuring user input is valid before submitting a form.
-
-// Handling form submissions with JavaScript: Methods for capturing and processing form data on the client side using JavaScript.
-
 
 
 
