@@ -789,3 +789,4 @@ const container = document.querySelector('.container');
 // Using Element Properties for Sibling Navigation
 
 // Getting previous and next sibling elements
+console.log(hamburgerIcon);

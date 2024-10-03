@@ -90,10 +90,10 @@
 }
 
 
-#root .close{
+#root .mclose{
 display: none;
 }
-#root .active{
+#root .mactive{
 display: flex;
 }
 
