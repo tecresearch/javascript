@@ -163,20 +163,44 @@
     }
 
 
-   #root .model-enroll {
-        position: absolute;
-        top: 320px;
-        display: none;
-        border: 1px solid rgb(196, 196, 196);
-        border-radius: 15px;
-      }
+  #root .model-login   {
+        /* position: absolute; */
+       position: fixed;
+       z-index: 1000; /* Ensures it stays above other elements */
+       top: 30%; /* Center vertically */
+       left: 50%; /* Center horizontally */
+       transform: translate(-50%, -50%); /* Center the modal */
+       display: none;
       
-    #root  .model-login {
-        position: absolute;
-        top: 320px;
-        display: none;
-        border: 1px solid rgb(196, 196, 196);
-        border-radius: 15px;
-      }
+     }
+    
+     #root  .model-enroll{
+        /* position: absolute; */
+       position: fixed;
+       z-index: 1000; /* Ensures it stays above other elements */
+       top: 30%; /* Center vertically */
+       left: 50%; /* Center horizontally */
+       transform: translate(-50%, -50%); /* Center the modal */
+       display: none;
+      
+     }
 
+     
+/* Overlay for the modal */
+#root .modal-overlay {
+    position: fixed;
+    top: 60%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the modal */
+    width: 50%;
+    height: 60%;
+    background: rgba(173, 173, 173, 0.062); /* Dark overlay */
+    display: none; /* Initially hidden */
+    z-index: 999; /* Below the modal */
+    border: 1px solid rgb(196, 196, 196);
+    box-shadow: 2px 2px 5px rgba(196, 196, 196, 0.767);
+   
+  }
+  
+  
   }

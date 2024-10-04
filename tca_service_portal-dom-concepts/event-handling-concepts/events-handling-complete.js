@@ -61,6 +61,8 @@ function handleKeyUp() {
     // window.location.href = 'newPage.html'; // Redirect after alert
 }
 
+
+
 // Setting event handlers directly when website will be loaded 
 // document.addEventListener('DOMContentLoaded', () => {
 //     document.querySelector('#clickButton').onclick = handleClick;
@@ -71,6 +73,8 @@ function handleKeyUp() {
 //     document.querySelector('#keyInput').onkeydown = handleKeyDown;
 //     document.querySelector('#keyInput').onkeyup = handleKeyUp;
 // });
+
+
 
 
 // Adding event listeners: addEventListener(): Attaches an event handler function to an element for a specific event.
@@ -168,16 +172,6 @@ eMyList.removeEventListener('click',performAction);
         //we applied the singl event handler to the root(parent)
         eRoot.addEventListener('click',myMessege);
         eRoot.removeEventListener('click',myMessege);
-
-
-
-      
-
-
-
-
-
-
 
 
 

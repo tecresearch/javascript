@@ -6,6 +6,8 @@ const em = document.querySelector('.model-enroll');
 const lclose = document.querySelector('#l-close');
 const eclose = document.querySelector('#e-close');
 
+
+
 loginButton.forEach(lb=>{
     lb.onclick = () => {
         
@@ -38,5 +40,18 @@ eclose.onclick = () => {
     ml.classList.remove('mactive');
     em.classList.remove('mactive');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
