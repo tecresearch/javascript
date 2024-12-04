@@ -37,7 +37,7 @@ a:hover {
 }
 
 header {
-    
+    position:sticky;
     width: 100vw; /* Header width slightly less than full viewport */
     height: 60px; /* Fixed height for the header */
     display: flex; /* Flexbox layout */
